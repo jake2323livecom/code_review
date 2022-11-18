@@ -30,4 +30,4 @@ Examples:
 | --- | --- |
 | `'hello world'` | `True` |
 | `'99 hello world'` | `True` |
-| `'Hello world'` | `False` |
+| `'Hello 99 world'` | `False` |
