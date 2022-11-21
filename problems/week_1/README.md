@@ -20,20 +20,6 @@ Here are some examples:
 
 
 
-### Check for lowercase letters (Difficulty 5 out of 10)
-
-Create a function to check whether every _letter_ in a string is lowercase.
-
-Your function should return a boolean value.
-
-Examples:
-
-| Input | Output |
-| --- | --- |
-| `'hello world'` | `True` |
-| `'99 hello world'` | `True` |
-| `'Hello 99 world'` | `False` |
-
 ### Space shuttle count down (Difficulty 5 out of 10)
 
 Create a function that, when executed, prints out a space shuttle countdown.  Your function should start at 10, and print one number in the countdown once every second.  Instead of printing out 0, your function should print `'Lift off!'` as the final message.
