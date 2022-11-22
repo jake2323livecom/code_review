@@ -36,7 +36,7 @@ Examples:
 
 ### Sort names (Difficulty 5 out of 10)
 
-Create a function that takes two parameters: a list of names and how you want them sorted.  The second parameter can be either `'length'` or `'alphabetic'`.  This second parameter should determine how the list is sorted.  If something other than `'length'` or `'alphabetic'` is passed as the second parameter, your function should raise a `ValueError` with a custom message.
+Create a function that takes two parameters: a list of names and how you want them sorted, and returns the sorted version of the list using the specified method.  The second parameter can be either `'length'` or `'alphabetic'`, and should determine how the list is sorted.  If something other than `'length'` or `'alphabetic'` is passed as the second parameter, your function should raise a `ValueError` with a custom message.
 
 ### Find a subnet ID (Difficulty 7 out of 10)
 
