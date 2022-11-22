@@ -6,13 +6,21 @@ Examples:
 
 | Input | Output |
 | --- | --- |
-| `'some_string', 3` | `'000some_string` |
-| `'some_string', 1` | `0some_string` |
-| `'some_string', 5` | `00000some_string` |
+| `'some_string', 3` | `'000some_string'` |
+| `'some_string', 1` | `'0some_string'` |
+| `'some_string', 5` | `'00000some_string'` |
 
 ### Find the average (Difficulty 3 out of 10)
 
-Create a function that takes a list of numbers and returns the average expressed _as an integer_.
+Create a function that takes a list of numbers and returns the average expressed _as an integer_.  Round up to the next highest integer if need be.
+
+Examples:
+
+| Input | Output |
+| --- | --- |
+| `[1, 2, 3, 4, 5]` | `3` |
+| `[3, 4, 5, 6]` | `5` |
+| `[1, 2, 5, 10]` | `5` |
 
 ### Generate powers of 2 (Difficulty 4 out of 10)
 
@@ -33,5 +41,13 @@ Create a function that takes two parameters: a list of names and how you want th
 ### Find a subnet ID (Difficulty 7 out of 10)
 
 Create a function that, given an IP address and subnet mask (in dotted decimal notation), can determine the subnet ID the IP address belongs to.
+
+Examples:
+
+| Input | Output |
+| --- | --- |
+| `'192.168.10.1', '255.255.255.0'` | `'192.168.10.0'` |
+| `'10.10.1.1', '255.255.0.0'` | `'10.10.0.0'` |
+| `'172.16.2.35', '255.255.255.248'` | `172.16.2.32'` |
 
 
