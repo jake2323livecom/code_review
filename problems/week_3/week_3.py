@@ -1,8 +1,14 @@
-### Find An Easter Egg ###
+    ##########################
+    ### Find An Easter Egg ###
+    ##########################
+
 
 import this
 
-### Find The 3 Highest Numbers ###
+
+    ##################################
+    ### Find The 3 Highest Numbers ###
+    ##################################
 
 
 def numbers(list):
@@ -14,5 +20,25 @@ def numbers(list):
     
 numbers([100, 4, 888, 432, 999])
 
-### Add a Number To Its Reverse ###
+
+    ###################################
+    ### Add a Number To Its Reverse ###
+    ###################################
+
+
+def reverse_number():
+    
+    num = int(input("Please Enter A Number: "))
+    new_num = int((str(num)[::-1]))
+    final_num = num + new_num
+    return final_num
+    
+    
+print(reverse_number())
+
+
+    #############################
+    ### Old Fashioned Texting ###
+    #############################
+    
 
