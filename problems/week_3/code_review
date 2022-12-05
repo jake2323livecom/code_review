@@ -1,0 +1,66 @@
+# Find an easter egg (Difficulty 2 out of 10)
+
+import this
+print(this)
+
+# Find the 3 highest numbers (Difficulty 3 out of 10)
+
+def my_function(numbers):
+    top_three = []
+    while len(top_three) < 3:
+        top_three.append(max(numbers))
+        numbers.remove(max(numbers))
+    return(top_three)
+
+a = [int(x) for x in input().split()]
+print(my_function(a))
+
+# Add a number to its reverse (Difficulty 4 out of 10)
+
+number = input()
+reverse = number[::-1]
+logic = int(number) + int(reverse)
+print(logic)
+
+# Old Fashioned Texting (Difficulty 6 out of 10)
+ 
+keyboard = {
+'2':['a', 'b', 'c'],
+'3':['d', 'e', 'f'],
+'4':['g', 'h', 'i'],
+'5':['j', 'k', 'l'],
+'6':['m', 'n', 'o'],
+'7':['p', 'q', 'r', 's'],
+'8':['t', 'u', 'v'],
+'9':['w', 'x', 'y', 'z'],
+'0':[" "]
+}
+
+str_in = input()
+def text(letter):
+    for k,v in keyboard.items():
+        for l in v:
+            if l == letter:
+                return(k * int(v.index(l) + 1))
+ls = []
+for i in str_in:
+    ls.append(text(i))
+print(*ls, sep = "-")
+
+# Find Friday the 13ths (Difficulty 8 out of 10)
+
+import calendar
+cal= calendar.Calendar()
+def friday_13(year, month):
+        for x in cal.itermonthdays4(year, month):
+            if x[2] == 13 and x[3] == 4:
+                return(x)
+
+year_in = int(input())
+months = list(range(1,13))
+date = []
+for i in months:
+    if friday_13(year_in, i) is not None:
+        date.append(friday_13(year_in, i))
+for day in date:
+    print(calendar.month_name[day[1]])
