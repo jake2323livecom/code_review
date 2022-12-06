@@ -7,6 +7,8 @@ from datetime import date
 import calendar
 
 def unlucky_months(year: int) -> list:
+    """Returns every month from a given year that has a friday the 13th."""
+    
     sequence = []
     for month in range(1, 13):
         if date(year, month, 13).weekday() == 4:
