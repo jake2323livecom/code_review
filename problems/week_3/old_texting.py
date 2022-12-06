@@ -33,18 +33,20 @@ KEYS = {
 
 def main():
     #Test cases
-    print(f"'hello world' converts to: {texting('hello world')}")
-    print(f"'idk my bff jill' converts to: {texting('idk my bff jill')}")
-    print(f"'she mad woke frfr' converts to: {texting('she mad woke frfr')}")
+    print(texting('hello world'))
+    print(texting('idk my bff jill'))
+    print(texting('she mad woke frfr'))
 
 
 def texting(message:str) -> str:
     ''' Returns a key code for testing on an old phone'''
-    msg_len = len(message)
-    key_code = ''.join([f"{KEYS[message[i]]}-" for i in range(msg_len)])
-    
-    return key_code[:-1]  # Removes the last '-' from the output
 
+    # Creates the list of keys to push
+    keys_to_push = [f"{KEYS[message[i]]}" for i in range(len(message))]
+    
+    # Adds a '-' between each key code
+    return '-'.join(keys_to_push)
+    
 
 if __name__ == "__main__":
     main()
