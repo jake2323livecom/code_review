@@ -4,6 +4,7 @@ import this
 ## Find 3 Highest Numbers #
 
 def highest_nums(nums):
+    '''Takes a list of numbers and returns the highest 3'''
     nums.sort(reverse = True)
     top3 = nums[0:3]
     return(top3)
