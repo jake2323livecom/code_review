@@ -24,7 +24,18 @@ print(rev_number(123))
 print(rev_number(3548))
 
 def texting(string: str) -> str:
-    """Shows the old texting pattern for a message."""
+    """
+    Shows the old texting pattern for a message.
+
+    Takes a message containing any alphabetic characters and translate it into a number of key press patterns. 
+    Future version will support numbers as well.
+    
+    Parameters:
+        string (str): Any user inputted string.  Can contain only letters.
+
+    Returns:
+        str: Returns a series of number presses on an old cell phone.
+    """
 
     keypad = {
         '2': 'abc',
@@ -38,13 +49,18 @@ def texting(string: str) -> str:
         '0': ' '
     }
 
+    
     patterns = []
 
     for char in string:
-        for num, letters in keypad.items():
-            if char in letters:
-                pattern = num * (letters.index(char) + 1)
-                patterns.append(pattern)
+        if char.isalpha() or char.isspace():
+            for num, letters in keypad.items():
+                if char in letters:
+                    pattern = num * (letters.index(char) + 1)
+                    patterns.append(pattern)
+        else:
+            raise ValueError('The inputted string must contain only letters and spaces.')
+
 
     return '-'.join(patterns)
 
@@ -52,54 +68,3 @@ print(texting('hello world'))
 print(texting('idk my bff jill'))
 print(texting('she mad woke frfr'))
 
-from calendar import Calendar
-
-def fridays(year: int) -> list:
-    """Returns every month in a year that has a friday the 13th."""
-
-    # Create a list of month names.  This will come in handy later.
-    months = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-    ]
-
-    # Create a generic Calendar object instance
-    all_time = Calendar()
-
-    
-    # Use a class method to grab all the days of a particular year.  
-    # For some reason this method returns a list where the entire year's months are kept in the first item, 
-    # so we go ahead and set the year variable to the first index of the result of the function call.
-    year = all_time.yeardays2calendar(year=year, width=12)[0]
-
-    # Create empty result list
-    result = []
-
-    # Loop through each month in the year.  We use enumerate so that we will have the month's index number.  
-    # This is what we will use to pull the month's name from the above list.
-    for index, month in enumerate(year):
-        for week in month:
-            for day in week:
-
-                # The day is a tuple containing the day number (out of the month) and weekday number, so we unpack it into two variables.
-                day_number, weekday_number = day
-
-                # If the day number is 13 and the weekday number is 4 (friday), then we use the index to pull the correct month name from the months list.
-                if day_number == 13 and weekday_number == 4:
-                    result.append(months[index])
-
-    return result
-
-print(fridays(2019))
-print(fridays(1995))
-print(fridays(1980))
