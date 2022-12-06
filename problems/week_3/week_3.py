@@ -72,3 +72,15 @@ def old_fashion_text (string) :
     print(result)
 
 old_fashion_text("she mad woke frfr")
+
+
+     #######################
+     ### Friday the 13th ###
+     #######################
+     
+     
+def friday_the_13th(range()):
+     pass
+
+friday_the_13th(2010, 2022)
+     
