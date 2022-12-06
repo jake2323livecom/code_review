@@ -2,7 +2,8 @@
 
 # Create a function to reverse the digits of a given number and add it to the original.
 
-def thing(list_input):
+def thing(list_input: list) -> int:
+    '''Determines the reverse digits of a user-inputted number, and adds the two numbers together'''
     second_number = ""
     '''Iterates the list backwards to establish the reversed number'''
     for digit in list_input[-1::-1]:

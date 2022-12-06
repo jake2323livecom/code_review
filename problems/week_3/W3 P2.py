@@ -3,19 +3,22 @@
 
 # Your function should take a list of numbers as input and return the three highest numbers in descending order.
 
-def request():
-    list_output = []
+def request(list_input: list) -> list:
+    '''Based on user input, determines and displays the three highest numbers in *descending* order'''
+    # list_output = []
     '''Change the list from string to integers'''
-    for digit in list_input:
-        list_output.append(int(digit))
+    # for digit in list_input:
+    #     list_output.append(int(digit))
+    list_input = [int(digit) for digit in list_input]
+    print(list_input)
     '''Sort the list in *descending* order'''
-    list_output.sort(reverse=True)
+    list_input.sort(reverse=True)
     '''Return the first three list items'''
-    return list_output[0:3]
+    return list_input[0:3]
 
 user_input = input("What are the numbers?: ")
 '''Replace commas, if any, with spaces to facilitate the next part'''
 remove_commas = user_input.replace(",", " ")
 '''Split the input into a list, using spaces as the delineator'''
 list_input = remove_commas.split()
-print(request())
+print(request(list_input))

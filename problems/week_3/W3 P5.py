@@ -6,11 +6,13 @@
 from datetime import date
 import calendar
 
-def unlucky_months(year):
+def unlucky_months(year: int) -> list:
     sequence = []
     for month in range(1, 13):
         if date(year, month, 13).weekday() == 4:
             sequence.append(calendar.month_name[month])
+        # sequence = [calendar.month_name[month] if date(year, month, 13).weekday() == 4 else ]
+    # sequence = [calendar.month_name[month] if date(year, month, 13.weekday() == 4 for month in range(1, 13)]
     return sequence
 
 user_input = int(input("What year are we looking at? "))
