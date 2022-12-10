@@ -22,7 +22,7 @@ You will have to use PIP to install this module.
 
 There is a publicly available Nautobot server out there reachable via [this url](https://demo.nautobot.com).
 
-Use either Thunder Client or Python to execute an API call to this public Nautobot server.  Your API call should return all of the information for the _devices_.
+Use either Thunder Client or Python to execute an API call to this public Nautobot server.  Your API call should return all of the information for the _devices_ that this Nautobot tracks.
 
 ---
 
