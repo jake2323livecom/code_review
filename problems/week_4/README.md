@@ -14,6 +14,8 @@ Choose from one of the available categories and pick a specific API to hit.
 
 Using Python, execute the same API call within a script.  In order to do this, you'll need to use the `requests` module.  More information on it can be found on [Pypi](https://pypi.org/project/requests/), which is the primary package repository for Python.
 
+You will have to use PIP to install this module.
+
 ---
 
 ### Execute an API call to Nautobot (Difficulty 7 out of 10)
