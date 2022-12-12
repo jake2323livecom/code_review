@@ -3,6 +3,7 @@ from requests.auth import HTTPBasicAuth
 import urllib3
 urllib3.disable_warnings()
 import json
+from prettytable import PrettyTable
 
 
 ##################################################################################
@@ -61,7 +62,7 @@ def get_device_list():
     return json.dumps(device_list, indent=4)
 
 
-print(get_device_list())    
+print(get_device_list()) 
 
 
 ##################################################################################
@@ -69,3 +70,33 @@ print(get_device_list())
 ##################################################################################
 
 
+def device_map():
+
+    url = "https://demo.nautobot.com/api/dcim/devices/"
+
+    token = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+    headers={
+            "Authorization": "Token {}".format(token),
+            "Accept": "application/json"
+    }
+
+    response = requests.get(
+        url,
+        headers=headers,
+        verify=False
+    )
+
+    device_list = response.json()
+
+    parsed_data = {}
+
+    devices = device_list
+
+    for device in devices['results'][0]:
+
+        parsed_data.__setitem__(device_list['results'][0]["name"], device_list['results'][0]["site"]["name"])
+
+    print(parsed_data)
+
+device_map()
