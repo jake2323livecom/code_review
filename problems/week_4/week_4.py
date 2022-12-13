@@ -86,16 +86,16 @@ def device_map():
         verify=False
     )
 
-    device_list = response.json()
+    device_list = response.json()['results']
 
     parsed_data = {}
 
-    devices = device_list
+    device = device_list
 
-    for device in devices['results'][0]:
+    for device in device_list:
+        parsed_data[device['name']] = device['site']['name']
 
-        parsed_data.__setitem__(device_list['results'][0]["name"], device_list['results'][0]["site"]["name"])
-
-    print(parsed_data)
+    for k,v in parsed_data.items():
+        print(f"{k}: {v}")
 
 device_map()
