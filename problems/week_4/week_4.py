@@ -3,7 +3,6 @@ from requests.auth import HTTPBasicAuth
 import urllib3
 urllib3.disable_warnings()
 import json
-from prettytable import PrettyTable
 
 
 ##################################################################################
