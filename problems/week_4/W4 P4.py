@@ -21,7 +21,7 @@ def get_device_list():
     )
 
     device_list = response.json()['results']
-
+    print(type(device_list))
     for device in device_list:
         # print(device['id'])
         # print(device['device_type']['manufacturer']['display'])
