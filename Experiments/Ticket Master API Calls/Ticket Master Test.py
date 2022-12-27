@@ -18,15 +18,23 @@ def retrieve_tm_events():
     tm_events_dict = {}
     
     for events in tm_events_data:
-        tm_events_dict[events['name']] = events['sales']['public']['startDateTime']
+        tm_events_dict[events['id'] + "_name"] = events['name']
+        tm_events_dict[events['id'] + "_saledate"] = events['sales']['public']['startDateTime']
+        # tm_events_dict[events['name']] = events['sales']['public']['startDateTime']
         # tm_events_dict[events['name']] = events['name']
         # tm_events_dict[events['sales']['public']['startDateTime']] = events['sales']['public']['startDateTime']
         # tm_events_dict["Name"] = events['name']
         # tm_events_dict["Sales Start Date"] = events['sales']['public']['startDateTime']
 
-    for name,sales in tm_events_dict.items():
-        print(f"Name:  {name}\nSales: {sales}")
-        # print(f"Sales: {sales}")
+    for id,info in tm_events_dict.items():
+        if "_name" in id:
+            print(f"Name:  {info}")
+        elif "_saledate" in id:
+            print(f"Sales: {info}")
+
+    # for name,sales in tm_events_dict.items():
+    #     print(f"Name:  {name}\nSales: {sales}")
+    #     # print(f"Sales: {sales}")
 
 if __name__ == '__main__':
     retrieve_tm_events()
